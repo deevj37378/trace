@@ -1,15 +1,15 @@
-// Light-theme rebuilds of the original site's architecture mock-ups. All text is verbatim.
+// Token-themed rebuilds of the original site's architecture mock-ups. All text is verbatim.
 import { Zap } from "lucide-react";
 import { media } from "@/lib/content/shared";
 
 function Window({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="w-full overflow-hidden rounded-xl border border-line bg-surface font-mono text-xs">
+    <div className="w-full overflow-hidden rounded-xl border border-line bg-surface font-mono text-xs shadow-[0_24px_80px_-24px_rgba(0,0,0,0.9),inset_0_1px_0_rgba(255,255,255,0.06)]">
       <div className="flex h-10 items-center justify-between border-b border-line bg-subtle px-4">
         <div className="flex gap-1.5">
           <span className="size-2.5 rounded-full bg-line-strong" />
-          <span className="size-2.5 rounded-full bg-line-strong" />
-          <span className="size-2.5 rounded-full bg-line-strong" />
+          <span className="size-2.5 rounded-full bg-moss/60" />
+          <span className="size-2.5 rounded-full bg-accent/70" />
         </div>
         <span className="truncate px-3 text-[11px] text-muted">{title}</span>
         <span className="w-10" />
@@ -39,10 +39,10 @@ function RustHarness() {
       <div className="space-y-2">
         <div className="flex justify-between text-muted">
           <span>Traditional Electron AI IDEs</span>
-          <span className="font-medium text-[#b4532a]">1,850 MB</span>
+          <span className="font-medium text-warn">1,850 MB</span>
         </div>
         <div className="h-2.5 overflow-hidden rounded-full bg-subtle">
-          <div className="h-full w-[94%] rounded-full bg-[#d9a48c]" />
+          <div className="h-full w-[94%] rounded-full bg-warn/50" />
         </div>
       </div>
       <div className="space-y-2">
@@ -105,9 +105,9 @@ function DevTools() {
           </div>
         ))}
       </div>
-      <div className="space-y-1.5 rounded-lg border border-[#b4532a]/25 bg-[#b4532a]/5 p-3.5">
+      <div className="space-y-1.5 rounded-lg border border-warn/25 bg-warn/5 p-3.5">
         <div className="flex justify-between">
-          <span className="font-medium text-[#b4532a]">Auto-Correlated & Patched</span>
+          <span className="font-medium text-warn">Auto-Correlated & Patched</span>
           <span className={`font-medium ${ok}`}>Verified in DOM</span>
         </div>
         <p className="font-sans text-muted">
@@ -158,7 +158,7 @@ function VisualEditor() {
           <p className="text-sm font-medium text-fg">Checkout CTA Banner</p>
           <p className="text-[11px] text-muted">Selected element: HeroCTA.tsx</p>
         </div>
-        <span className="rounded bg-accent px-2.5 py-1 text-[11px] font-medium text-white">Auto Layout</span>
+        <span className="rounded bg-accent px-2.5 py-1 text-[11px] font-medium text-bg">Auto Layout</span>
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div className={`${tile} p-2.5`}>

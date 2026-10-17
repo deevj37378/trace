@@ -52,14 +52,14 @@ function PinnedSlides() {
           {/* Header */}
           <div className="flex items-center justify-between border-b border-line pb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-faint">
             <div className="flex items-center gap-3">
-              <span className="text-fg">{architecture.num}</span>
-              <span className="h-px w-8 bg-line-strong" />
-              <span className="text-accent">{architecture.label}</span>
+              <span className="text-accent">{architecture.num}</span>
+              <span className="h-px w-8 bg-moss" />
+              <span className="text-fg">{architecture.label}</span>
               <span>/</span>
               <span className="text-muted">{slide.tag}</span>
             </div>
             <span className="flex items-center gap-2 tabular-nums">
-              <span className="size-1.5 rounded-full bg-accent" />
+              <span className="size-1.5 rounded-full bg-accent shadow-[0_0_8px_#00ff66]" />
               {pad(active + 1)} / {pad(total)}
             </span>
           </div>
@@ -75,7 +75,7 @@ function PinnedSlides() {
                     onClick={() => goTo(i)}
                     aria-current={i === active}
                     className={`flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs transition-colors ${
-                      i === active ? "bg-surface text-fg shadow-[0_0_0_1px_var(--line)]" : "text-muted hover:text-fg"
+                      i === active ? "bg-surface text-fg ring-1 ring-accent/30 shadow-[0_0_20px_-6px_rgba(0,255,102,0.5)]" : "text-muted hover:text-fg"
                     }`}
                   >
                     <Icon className={`size-3.5 ${i === active ? "text-accent" : ""}`} aria-hidden />
@@ -125,7 +125,7 @@ function PinnedSlides() {
           </div>
           <div className="mt-2 h-px bg-line">
             <div
-              className="h-px bg-accent transition-[width] duration-300"
+              className="h-px bg-accent shadow-[0_0_10px_#00ff66] transition-[width] duration-300"
               style={{ width: `${((active + 1) / total) * 100}%` }}
             />
           </div>
@@ -149,7 +149,7 @@ function SlideText({ slide }: { slide: ArchitectureSlide }) {
       </div>
       <a
         href={links.docs}
-        className="mt-6 inline-block rounded-md border border-line bg-surface px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:border-line-strong hover:bg-subtle hover:text-fg"
+        className="mt-6 inline-block rounded-md border border-line bg-surface px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.18em] text-muted transition-colors hover:border-accent/50 hover:bg-subtle hover:text-accent"
       >
         [ {architecture.docsLabel} ]
       </a>

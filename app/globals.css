@@ -11,6 +11,25 @@
   --muted: #6b6a65;
   --faint: #9c9a93;
   --accent: #1f7a4d;
+  --moss: #5a8c6e;
+  --dusk: #4a5a8c;
+  --warn: #b4532a;
+}
+
+/* Home page only: any page rendering [data-forest] flips the whole document,
+   nav and footer included, to the dark forest palette. */
+:root:has([data-forest]) {
+  --bg: #05070a;
+  --surface: #0b1210;
+  --subtle: #101a16;
+  --line: rgb(90 140 110 / 0.18);
+  --line-strong: rgb(90 140 110 / 0.38);
+  --fg: #e8f0ea;
+  --muted: #9db3a6;
+  --faint: #62786b;
+  --accent: #00ff66;
+  --warn: #ff8a5c;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -23,6 +42,9 @@
   --color-muted: var(--muted);
   --color-faint: var(--faint);
   --color-accent: var(--accent);
+  --color-moss: var(--moss);
+  --color-dusk: var(--dusk);
+  --color-warn: var(--warn);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -35,6 +57,11 @@ body {
 
 ::selection {
   background: #d9eadf;
+}
+
+:root:has([data-forest]) ::selection {
+  background: #00ff66;
+  color: #05070a;
 }
 
 :focus-visible {
@@ -53,7 +80,8 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee,
+  .animate-pulse {
     animation: none;
   }
 }
